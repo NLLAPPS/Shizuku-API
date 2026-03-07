@@ -19,9 +19,11 @@ android {
             minifyEnabled = false
         }
     }
+
+    def javaVersionEnum = JavaVersion.toVersion(libs.versions.javaVersion.get().toString())
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = javaVersionEnum
+        targetCompatibility = javaVersionEnum
     }
     externalNativeBuild {
         cmake {
@@ -34,8 +36,8 @@ android {
 dependencies {
     implementation project(":api")
 
-    implementation "androidx.annotation:annotation:1.3.0"
-    implementation "org.lsposed.libcxx:libcxx:27.0.12077973"
+    implementation libs.androidx.annotation
+    implementation libs.libcxx
 }
 
 ext {

@@ -19,11 +19,11 @@ plugins {
 }
 
 android {
-    compileSdk = 36
-    minSdk = 24
-    targetSdk = 36
-    ndkVersion = "29.0.13113456"
-    buildToolsVersion = "36.0.0"
+    compileSdk = libs.versions.compileSdkVersion.get().toInteger()
+    minSdk(libs.versions.minSdkVersion.get().toInteger())
+    targetSdk(libs.versions.targetSdkVersion.get().toInteger())
+    ndkVersion = libs.versions.ndkVersion.get()
+    buildToolsVersion = libs.versions.buildToolsVersion.get()
 }
 
 dependencyResolutionManagement {
