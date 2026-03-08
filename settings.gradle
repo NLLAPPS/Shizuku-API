@@ -4,18 +4,6 @@ pluginManagement {
         mavenCentral()
         mavenLocal()
     }
-    plugins {
-        id("com.android.application") version "9.1.0"
-        id("com.android.library") version "9.1.0"
-        id("org.jetbrains.kotlin.android") version "2.3.10"
-        id("dev.rikka.tools.autoresconfig") version "1.2.2"
-        id("dev.rikka.tools.materialthemebuilder") version "1.5.1"
-        id("dev.rikka.tools.refine") version "4.4.0"
-    }
-}
-
-plugins {
-    id("com.android.settings") version "9.1.0"
 }
 
 android {
@@ -32,6 +20,11 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         mavenLocal()
+    }
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
     }
 }
 
