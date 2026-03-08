@@ -5,7 +5,7 @@ plugins {
 android {
     namespace = "rikka.shizuku.api"
     buildFeatures {
-        buildConfig = false
+        buildConfig = true
     }
     buildTypes {
         release {
@@ -15,6 +15,16 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    defaultConfig {
+        buildConfigField(
+                "String", "MANAGER_APPLICATION_ID", "\"${libs.versions.appPackageName.get()}\""
+        )
+        buildConfigField(
+                "String", "EXTRA_BINDER", "\"${libs.versions.appExtraBinder.get()}\""
+        )
+
     }
 }
 

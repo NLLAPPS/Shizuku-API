@@ -6,9 +6,12 @@ android {
     namespace = "rikka.shizuku.provider"
     defaultConfig {
         consumerProguardFiles = ["consumer-rules.pro"]
+        buildConfigField(
+                "String", "EXTRA_BINDER", "\"${libs.versions.appExtraBinder.get()}\""
+        )
     }
     buildFeatures {
-        buildConfig = false
+        buildConfig = true
     }
     buildTypes {
         release {
