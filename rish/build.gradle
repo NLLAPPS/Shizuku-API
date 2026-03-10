@@ -6,11 +6,13 @@ plugins {
 android {
     namespace = "rikka.rish"
     defaultConfig {
+
         externalNativeBuild {
             cmake {
                 arguments = ["-DANDROID_STL=none"]
             }
         }
+
     }
     buildFeatures {
         prefab = true
