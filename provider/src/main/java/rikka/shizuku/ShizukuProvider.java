@@ -18,8 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import moe.shizuku.api.BinderContainer;
-import rikka.shizuku.api.BuildConfig;
 import rikka.sui.Sui;
+import rikka.shizuku.provider.BuildConfig;
 
 /**
  * <p>
@@ -77,7 +77,6 @@ public class ShizukuProvider extends ContentProvider {
 
     public static final String PERMISSION = "moe.shizuku.manager.permission.API_V23";
 
-    public static final String MANAGER_APPLICATION_ID = BuildConfig.MANAGER_APPLICATION_ID;
 
     private static boolean enableMultiProcess = false;
 
